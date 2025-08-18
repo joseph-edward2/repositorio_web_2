@@ -24,20 +24,11 @@
       max-width: 400px;
     }
 
-    .logo {
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle at top left, #ff0080, #ff8c00);
-      border-radius: 50%;
-      margin: 20px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
+  
     .logo-icon {
       font-size: 48px;
       color: white;
+      display : block;
     }
 
     h1 {
@@ -58,6 +49,7 @@
       border-radius: 8px;
       border: none;
       width: 100%;
+      color: rgb(255, 255, 255);
     }
 
     input[type="submit"] {
@@ -102,38 +94,49 @@
       color: white;
       text-decoration: underline;
     }
+
+    .princi {
+      
+    }
+    img{
+      width:190px
+
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <main class="container">
     <h1>Contactus</h1>
     <div class="logo">
-      <span class="logo-icon">📝</span>
+      <span class="logo-icon"><img src='logo.png' ></span>
     </div>
-    <h2>Criar Conta</h2>
-    <p>Insira seu Telefone</p>
 
-    <form method="post" action="login.php">
-      <input type="text" name="usuario" placeholder="Nome do usuário" />
-      <input type="password" name="senha" placeholder="Senha" />
+    <section class = "princi">
+      <h2>Login</h2>
+      <p>Insira seu Telefone</p>
       
-      <div class="checkbox-container">
-        <input type="checkbox" id="termos" />
-        <label for="termos">Concordo com os termos de uso e privacidade</label>
+      <form method="post" action="login.php">
+        <input type="text" name="usuario" placeholder="Nome do usuário" />
+        <input type="password" name="senha" placeholder="Senha" />
+        
+        <div class="checkbox-container">
+          <input type="checkbox" id="termos" />
+          <label for="termos">Concordo com os termos de uso e privacidade</label>
+        </div>
+        
+        <input type="submit" value="Continue" />
+      </form>
+      <div class="terms"> Não tem uma conta? <a href="singup.php">Criar</a></div>
+      <div class="terms">
+        Ao clicar em continuar, você concorda com nossos <a href="#">Termos de Serviço</a> e <a href="#">Política de Privacidade</a>.
       </div>
-
-      <input type="submit" value="Continue" />
-    </form>
-
-    <div class="terms">
-      Ao clicar em continuar, você concorda com nossos <a href="#">Termos de Serviço</a> e <a href="#">Política de Privacidade</a>.
-    </div>
-
-    <?php if (isset($_GET['erro'])){ ?>
-      <div class="alert" role="alert">
-        Usuário e/ou senha inválido(s).
+      
+      <?php if (isset($_GET['erro'])){ ?>
+        <div class="alert" role="alert">
+          Usuário e/ou senha inválido(s).
+        </div>
+        <?php } ?>
       </div>
-    <?php } ?>
-  </div>
-</body>
-</html>
+    </section>
+    </body>
+    </html>

@@ -28,7 +28,9 @@ else{
 switch ($pagina) {
 	case 'teste': include 'views/teste.php'; break;
 	case 'teste2': include 'views/teste2.php'; break;
+	case 'singup': include 'views/contacria.php'; break;
 	default: include 'views/home.php'; 
+	
 	break;
 }
 
