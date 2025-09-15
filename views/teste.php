@@ -76,10 +76,11 @@ $resultado = $conexao->query($sql);
         if ($resultado->num_rows > 0) {
             while($row = $resultado->fetch_assoc()) {
                 echo "<tr>
-                        <td>{$row['id']}</td>
-                        <td>{$row['usuario']}</td>
-                        <td>{$row['senha']}</td>
-                      </tr>";
+                    <td>{$row['id']}</td>
+                    <td>{$row['usuario']}</td>
+                    <td>{$row['senha']}</td>
+                    <td><a href='processa_apagar.php?id={$row['id']}'>Deletar</a></td>
+                  </tr>";
             }
         } else {
             echo "<tr><td colspan='3'>No data found</td></tr>";
@@ -89,5 +90,7 @@ $resultado = $conexao->query($sql);
     </center>
     <a href="?pagina=teste2">CU teste2</a>
     <a href="?pagina=singup">Adicionar Nova</a>
+    <a href="?pagina=remove">Remover Entradas</a>
+    <a href="?pagina=edit">Editar Entradas</a>
 </body>
 </html>
